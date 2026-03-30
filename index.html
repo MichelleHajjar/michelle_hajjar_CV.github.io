@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelle Hajjar - C-Level Growth & Revenue Executive</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0A1628;
+            --dark-blue: #142240;
+            --accent: #3B82F6;
+            --accent-light: #60A5FA;
+            --gold: #F59E0B;
+            --white: #FFFFFF;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-400: #9CA3AF;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+            --success: #10B981;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-100);
+            color: var(--gray-800);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 60%, #1E3A5F 100%);
+            color: var(--white);
+            padding: 56px 60px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-left h1 {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+        }
+
+        .header-left .title {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--accent-light);
+            margin-bottom: 8px;
+        }
+
+        .header-left .tagline {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            max-width: 520px;
+            line-height: 1.5;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 13px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+        }
+
+        .header-right a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .lang-bar {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lang-tag {
+            background: rgba(59,130,246,0.2);
+            border: 1px solid rgba(59,130,246,0.3);
+            color: var(--accent-light);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== METRICS BAR ===== */
+        .metrics-bar {
+            background: var(--dark-blue);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .metric {
+            padding: 24px 20px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .metric:last-child { border-right: none; }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 11px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .content {
+            padding: 48px 60px;
+        }
+
+        .section {
+            margin-bottom: 44px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        /* ===== SUMMARY ===== */
+        .summary-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            max-width: 920px;
+        }
+
+        /* ===== CRO COMPETENCIES ===== */
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .competency-card {
+            background: var(--gray-100);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 3px solid var(--accent);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .competency-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59,130,246,0.1);
+        }
+
+        .competency-icon {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .competency-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 6px;
+        }
+
+        .competency-desc {
+            font-size: 12.5px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        /* ===== EXPERIENCE ===== */
+        .role {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .role:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .role-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .role-company {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .role-meta {
+            font-size: 12px;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        .role-date {
+            font-size: 13px;
+            color: var(--gray-400);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .role-summary {
+            font-size: 13.5px;
+            color: var(--gray-600);
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        .achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements li {
+            font-size: 13px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            padding: 5px 0 5px 20px;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        /* ===== WALLET & PAYMENTS CALLOUT ===== */
+        .payments-callout {
+            background: linear-gradient(135deg, #EFF6FF 0%, #F0F9FF 100%);
+            border: 1px solid #BFDBFE;
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 20px 0;
+        }
+
+        .payments-callout-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 12px;
+        }
+
+        .payments-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .payments-tag {
+            background: var(--white);
+            border: 1px solid #BFDBFE;
+            color: var(--dark-blue);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ===== SKILLS BAR ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-group h4 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: var(--gray-100);
+            color: var(--gray-600);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* ===== EDUCATION & FOOTER ===== */
+        .edu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .edu-row:last-child { border-bottom: none; }
+
+        .edu-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .edu-detail {
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        .footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 20px;
+            font-size: 11px;
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none; max-width: 100%; }
+            .competency-card:hover { transform: none; box-shadow: none; }
+            .section { page-break-inside: avoid; }
+        }
+
+        @media (max-width: 768px) {
+            .header { padding: 32px 24px; }
+            .header-top { flex-direction: column; }
+            .header-right { text-align: left; margin-top: 16px; }
+            .content { padding: 32px 24px; }
+            .metrics-bar { grid-template-columns: repeat(3, 1fr); }
+            .competency-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-top">
+                <div class="header-left">
+                    <h1>MICHELLE HAJJAR</h1>
+                    <div class="title">C-Level Executive</div>
+                    <p class="tagline">CRO / Chief Growth Officer / Chief Customer Officer  - Revenue architect who builds growth engines from zero. 15 years across fintech, luxury retail, automotive, and real estate  - launching markets, aligning pricing, marketing, CS, and sales into a single commercial machine across EMEA, GCC, and Africa.</p>
+                </div>
+                <div class="header-right">
+                    +44 7393 339163<br>
+                    <a href="mailto:michelle.hajjar@gmail.com">michelle.hajjar@gmail.com</a><br>
+                    London, UK<br>
+                    <a href="https://linkedin.com/in/michelle-hajjar">linkedin.com/in/michelle-hajjar</a>
+                </div>
+            </div>
+            <div class="lang-bar">
+                <span class="lang-tag">English (Native)</span>
+                <span class="lang-tag">French (Native)</span>
+                <span class="lang-tag">Arabic (Native)</span>
+            </div>
+        </div>
+
+        <!-- METRICS BAR -->
+        <div class="metrics-bar">
+            <div class="metric">
+                <div class="metric-value">$264M</div>
+                <div class="metric-label">Revenue P&L</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">1.27M &rarr; 2.13M</div>
+                <div class="metric-label">Customers (+68%)</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">$10.7B</div>
+                <div class="metric-label">Face Value Processed</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">69%</div>
+                <div class="metric-label">CAC Reduction</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">30+</div>
+                <div class="metric-label">Enterprise Partnerships</div>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <!-- SUMMARY -->
+            <div class="section">
+                <div class="section-title">Executive Summary</div>
+                <p class="summary-text">
+                    Growth and innovation executive who has driven digital transformation and built commercial engines across fintech, luxury retail, automotive, and real estate. At MoneyGram International, created and led the European growth function that grew revenue from $208M to $264M ($10.7B face value), scaled the customer base from 1.27M to 2.13M (+68%), and transformed unit economics (CAC down 69%, LTV:CAC from 0.65x to 1.42x). Managed 30+ enterprise partnerships (Visa, Google Pay, Apple Pay, Orange Money) across a hybrid B2B2C model  - walk-in agent network, embedded digital partners (Mobily Pay, URPAY, Ooredoo), and direct-to-consumer (MGO app/web)  - scaling digital from 0% to 50% of total transactions. Supported the expansion of Mobily Pay and UAE digital wallet integrations. Built and led cross-functional teams spanning marketing, CS, analytics, partnerships, and sales enablement across 12 EMEA markets. Designed pricing architectures, built customer success functions, deployed Gen AI in production, and enabled sales teams with playbooks, pitch decks, and value-based selling frameworks. Weekly CEO and board-level presenter through a $1.8B PE acquisition.
+                </p>
+            </div>
+
+            <!-- CRO COMPETENCIES -->
+            <div class="section">
+                <div class="section-title">CRO Competencies</div>
+                <div class="competency-grid">
+                    <div class="competency-card">
+                        <div class="competency-icon">Revenue</div>
+                        <div class="competency-title">Revenue Growth & P&L</div>
+                        <div class="competency-desc">Scaled revenue from $208M to $264M (top-line P&L). $39.3M marketing budget. Gross profit $148M (56.2% margin). Contribution profit $96M (36.3% margin). $10.7B face value processed. Full P&L accountability across 12 markets.</div>
+                    </div>
+                    <div class="competency-card">
+                        <div class="competency-icon">Pricing</div>
+                        <div class="competency-title">Pricing & Unit Economics</div>
+                        <div class="competency-desc">Designed pricing structures: subscription models, tiered customer brackets, dynamic pricing with AI personalisation. Corridor-level FX optimisation. Reduced CAC 69%. Improved LTV:CAC from 0.65x to 1.42x.</div>
+                    </div>
+                    <div class="competency-card">
+                        <div class="competency-icon">Partnerships</div>
+                        <div class="competency-title">Enterprise Sales & Partnerships</div>
+                        <div class="competency-desc">Originated and closed multi-year deals with Visa, Apple, Google, Orange Money, Mobily Pay, URPAY, Ooredoo, and Carrefour. Managed 30+ enterprise accounts across a hybrid B2B2C model: walk-in agent network, embedded digital partners, and direct-to-consumer (app/web). Scaled digital channels from 0% to 50% of total transactions.</div>
+                    </div>
+                    <div class="competency-card">
+                        <div class="competency-icon">Marketing</div>
+                        <div class="competency-title">Marketing & Demand Generation</div>
+                        <div class="competency-desc">Built marketing function from zero. $39.3M marketing budget with MMM for allocation. Performance marketing (SEO/AEO, UAC). Landing pages. Website &amp; app funnel build (back-end). MarTech event tracking for retargeting &amp; social incrementality. Gen AI content at scale. Omnichannel strategy.</div>
+                    </div>
+                    <div class="competency-card">
+                        <div class="competency-icon">Customer Success</div>
+                        <div class="competency-title">CS Function & Retention</div>
+                        <div class="competency-desc">Built retention function from scratch: cohort analytics (Mo1-Mo12), lifecycle marketing, reactivation programmes (22.7% churned recovery). Integrated AI personalisation tools for CRM and customer journey orchestration. Repeat rate 35.1% to 36.9%. App LTV $107 vs walk-in $33.</div>
+                    </div>
+                    <div class="competency-card">
+                        <div class="competency-icon">Sales Enablement</div>
+                        <div class="competency-title">Sales Enablement & GTM</div>
+                        <div class="competency-desc">Created pitch decks, pricing models, partner playbooks, and co-branded campaign frameworks. Shifted selling from price-based to value-based. Partner share 20% to 40%.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WALLET & PAYMENTS HIGHLIGHT -->
+            <div class="section">
+                <div class="section-title">Digital Wallet & Mobile Money</div>
+                <div class="payments-callout">
+                    <div class="payments-callout-title">Payment Rails & Wallet Integrations</div>
+                    <div class="payments-tags">
+                        <span class="payments-tag">UAE Digital Wallet (CBUAE Approval)</span>
+                        <span class="payments-tag">Mobily Pay (KSA)</span>
+                        <span class="payments-tag">Visa Direct API</span>
+                        <span class="payments-tag">Apple Pay</span>
+                        <span class="payments-tag">Google Pay</span>
+                        <span class="payments-tag">Orange Money</span>
+                        <span class="payments-tag">SEPA / Real-Time Payments</span>
+                        <span class="payments-tag">Open Banking / PSD2</span>
+                        <span class="payments-tag">Bank Payout Programmes</span>
+                    </div>
+                </div>
+                <ul class="achievements" style="margin-top: 14px;">
+                    <li><span class="highlight">UAE Digital Wallet:</span> Supported regulatory approval with the Central Bank of the UAE (CBUAE), aligning growth strategy with compliance requirements to enable MoneyGram's digital wallet launch in the GCC market.</li>
+                    <li><span class="highlight">Mobily Pay (Saudi Arabia):</span> Supported the expansion of Mobily Pay payout partnerships into KSA, opening high-value Gulf remittance corridors.</li>
+                    <li><span class="highlight">Visa Direct & Orange Money:</span> Led end-to-end Visa Direct API integration and Orange Money mobile money rollout across Senegal, DRC, and C&ocirc;te d'Ivoire, achieving 300% corridor growth.</li>
+                    <li><span class="highlight">P2P Payments:</span> Drove P2P transaction surge of 2,203% (54K to 1.25M transactions) through digital wallet and partner-embedded channel strategy.</li>
+                </ul>
+            </div>
+
+            <!-- WORK EXPERIENCE -->
+            <div class="section">
+                <div class="section-title">Experience</div>
+
+                <!-- MoneyGram Director -->
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Head of Growth, Europe</div>
+                            <div class="role-company">MoneyGram International</div>
+                            <div class="role-meta">London | $200B payments network | 50M+ customers | 200+ countries</div>
+                        </div>
+                        <div class="role-date">Sep 2023 - Nov 2025</div>
+                    </div>
+                    <p class="role-summary">Promoted to lead regional growth, partnerships, and full P&L across EMEA and global corridors. Built and led 5 direct reports + 10 matrix across marketing, analytics, partnerships, and business development. $264M revenue P&L. $148M gross profit (56.2%). $96M contribution profit. $39.3M marketing budget. $10.7B face value processed.</p>
+                    <ul class="achievements">
+                        <li><span class="highlight">Revenue:</span> Scaled digital business from zero to 50% of company transactions. Grew regional revenue from $208M to $264M (+27% over tenure, $10.7B face value processed). Grew customer base from 1.27M to 2.13M (+68%). Net sends from 25.1M to 34.3M (+37%).</li>
+                        <li><span class="highlight">Acquisition & Retention Funnel:</span> Designed and operationalised full bow-tie funnel from acquisition through retention. Reduced CAC 69% ($92 to $28). Improved LTV:CAC from 0.65x to 1.42x. Built reactivation programmes recovering 22.7% of churned customers. 1-month repeat rate from 35.1% to 36.9%.</li>
+                        <li><span class="highlight">Landing Pages & Conversion:</span> Built and optimised high-converting landing pages, localised across 12 markets, integrated with performance marketing (SEO/AEO, UAC, Meta) and A/B testing frameworks to maximise funnel throughput.</li>
+                        <li><span class="highlight">Partnerships:</span> Forged 30+ embedded-finance and payout partnerships (Visa Direct, Orange Money, Mobily Pay, URPAY, Ooredoo, Apple Pay, Google Pay, Carrefour) across a hybrid B2B2C model  - walk-in agents, embedded digital partners, and direct-to-consumer. Drove +40% YoY transaction growth in flagship corridors.</li>
+                        <li><span class="highlight">Pricing Architecture:</span> Designed and built pricing structures including subscription models, tiered customer brackets, and corridor-level pricing. Implemented dynamic pricing based on customer journey stage with AI integration and personalisation. Competitive benchmarking across Western Union, Wise, and Remitly. Improved profitability 8-10% across Europe by reallocating to high-LTV markets.</li>
+                        <li><span class="highlight">Customer Success:</span> Built CS function from scratch with cohort and vintage model (Mo1-Mo12). Led Zeta CDP evaluation (7-12% projected uplift). Customer return rate 99.7%.</li>
+                        <li><span class="highlight">Sales Enablement:</span> Built sales pitch decks, pricing models, partner enablement playbooks, and co-branded campaign frameworks. Shifted selling from price-based to value-based, growing French market partner share from 20% to 40%.</li>
+                        <li><span class="highlight">Wallet & Regulatory:</span> Supported UAE digital wallet regulatory approval with CBUAE. Supported expansion of Mobily Pay payout partnerships in KSA. Navigated AML/KYC, PSD2, GDPR across 12 markets.</li>
+                        <li><span class="highlight">Innovation:</span> Championed a test-and-learn culture with 10-week structured experimentation framework. Piloted AI agent frameworks for automated performance marketing. Led MarTech stack evaluation (CDP/ESP). Introduced VR/360&deg; immersive tools in prior consulting work. Continuously adopted emerging tech to unlock new growth levers.</li>
+                        <li><span class="highlight">Gen AI:</span> Deployed AI across content generation, personalisation engines, predictive models (churn, CLV), next-best-action orchestration, and C-suite executive dashboards consolidating 30+ KPIs.</li>
+                        <li><span class="highlight">PE Acquisition:</span> Led change management through Madison Dearborn's $1.8B acquisition. Weekly CEO presentations. Board-level dashboards and strategic reporting.</li>
+                    </ul>
+                </div>
+
+                <!-- MoneyGram Product Marketing -->
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Product Marketing Lead, EMEIA</div>
+                            <div class="role-company">MoneyGram International</div>
+                            <div class="role-meta">London | 12 EMEA markets</div>
+                        </div>
+                        <div class="role-date">Sep 2021 - Aug 2023</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Designed and launched GTM frameworks connecting market research, funnel analytics, and pricing with lifecycle campaigns across 12 markets.</li>
+                        <li>Launched 7 new European markets with data-led corridor scoring model adopted globally for roadmap sequencing.</li>
+                        <li>Applied LTV-based segmentation and cohort analytics, improving marketing ROI by 25%. Co-built financial models that increased bank-account usage by 30%.</li>
+                        <li>Embedded KYC/AML compliance, FX-volatility modelling, and fraud analytics into corridor scoring frameworks.</li>
+                        <li>Delivered board-level presentations on expansion readiness, corridor profitability, and digital adoption performance.</li>
+                    </ul>
+                </div>
+
+                <!-- Consultant -->
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Digital Transformation Consultant</div>
+                            <div class="role-company">Subaru | Demco Properties | Patchi Global</div>
+                            <div class="role-meta">UAE / KSA</div>
+                        </div>
+                        <div class="role-date">Jan 2017 - Nov 2020</div>
+                    </div>
+                    <ul class="achievements">
+                        <li><span class="highlight">Subaru Automotive:</span> +15% YoY sales growth through customer acquisition funnels, segmentation, and brand positioning.</li>
+                        <li><span class="highlight">Demco Properties ($930M portfolio):</span> +50% qualified leads YoY with content strategy, remarketing, and immersive VR/360&deg; tools.</li>
+                        <li><span class="highlight">Patchi Global:</span> Launched MENA's first luxury e-commerce platform, shifting 22% of revenue online within 6 months.</li>
+                    </ul>
+                </div>
+
+                <!-- Jobs for Lebanon -->
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Cofounder & Growth Executive</div>
+                            <div class="role-company">Jobs for Lebanon NGO</div>
+                            <div class="role-meta">Global | 176+ countries</div>
+                        </div>
+                        <div class="role-date">2019 - 2021</div>
+                    </div>
+                    <p class="role-summary">Co-founded a global employment platform tackling unemployment across 176+ countries. Led partner development, stakeholder engagement, and digital platforms that scaled international reach.</p>
+                </div>
+
+                <!-- Burberry -->
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Product Marketing & Operations Lead, EMEIA Beauty</div>
+                            <div class="role-company">Burberry</div>
+                            <div class="role-meta">London | 20 countries</div>
+                        </div>
+                        <div class="role-date">2013 - 2016</div>
+                    </div>
+                    <p class="role-summary">Launched Burberry Beauty across 20 countries with full P&L accountability. Pioneered a digital-first commercial model that captured EMEIA market share from a standing start. Led cross-functional teams across product, brand, supply chain, and operations.</p>
+                </div>
+
+                <!-- Estee Lauder -->
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Digital Trade Marketing Coordinator, EMEIA Travel Retail</div>
+                            <div class="role-company">Est&eacute;e Lauder (Clinique & Origins)</div>
+                            <div class="role-meta">London</div>
+                        </div>
+                        <div class="role-date">2013</div>
+                    </div>
+                    <p class="role-summary">Trade marketing strategies across EMEIA duty-free channels, strengthening brand presence and driving sales growth for luxury brands portfolio.</p>
+                </div>
+
+                <!-- HAVAS -->
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Senior Digital Professional</div>
+                            <div class="role-company">HAVAS Digital</div>
+                            <div class="role-meta">Gulf Region, Dubai</div>
+                        </div>
+                        <div class="role-date">2011 - 2013</div>
+                    </div>
+                    <p class="role-summary">Agency-side digital marketing: client relationships, digital strategy, and campaign delivery across the Gulf region for luxury and beauty clients.</p>
+                </div>
+            </div>
+
+            <!-- CORE SKILLS -->
+            <div class="section">
+                <div class="section-title">Core Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h4>Revenue & Commercial</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">P&L Management</span>
+                            <span class="skill-tag">Revenue Growth</span>
+                            <span class="skill-tag">Pricing Strategy</span>
+                            <span class="skill-tag">Unit Economics</span>
+                            <span class="skill-tag">FX Optimization</span>
+                            <span class="skill-tag">Competitive Analysis</span>
+                            <span class="skill-tag">Portfolio Strategy</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Sales & Partnerships</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Enterprise Partnerships</span>
+                            <span class="skill-tag">Value-Based Selling</span>
+                            <span class="skill-tag">Sales Enablement</span>
+                            <span class="skill-tag">B2B2C</span>
+                            <span class="skill-tag">Deal Structuring</span>
+                            <span class="skill-tag">Partner Playbooks</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Marketing & CS</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Demand Generation</span>
+                            <span class="skill-tag">Marketing Mix Modelling</span>
+                            <span class="skill-tag">Customer Success</span>
+                            <span class="skill-tag">Lifecycle Marketing</span>
+                            <span class="skill-tag">Retention & Reactivation</span>
+                            <span class="skill-tag">Omnichannel Strategy</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Technology & Data</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Gen AI Deployment</span>
+                            <span class="skill-tag">Predictive Analytics</span>
+                            <span class="skill-tag">Salesforce</span>
+                            <span class="skill-tag">Zeta CDP</span>
+                            <span class="skill-tag">Looker</span>
+                            <span class="skill-tag">AppsFlyer</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">n8n</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDUCATION -->
+            <div class="section">
+                <div class="section-title">Education & Leadership</div>
+                <div class="edu-row">
+                    <div class="edu-title">BBA, Lebanese American University (LAU)</div>
+                    <div class="edu-detail">Business Administration</div>
+                </div>
+                <div class="edu-row">
+                    <div class="edu-title">Pre-Med, American University of Beirut (AUB)</div>
+                    <div class="edu-detail">Sciences Foundation</div>
+                </div>
+                <div class="edu-row">
+                    <div class="edu-title">Speaker, FinTech LIVE London</div>
+                    <div class="edu-detail">"Redefining Cross-Border Payments: How Technology is Powering Financial Inclusion"</div>
+                </div>
+                <div class="edu-row">
+                    <div class="edu-title">Cofounder, Jobs for Lebanon | Trustee, Impact Lebanon</div>
+                    <div class="edu-detail">Social Impact & Governance</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            Michelle Hajjar | C-Level Executive | +44 7393 339163 | michelle.hajjar@gmail.com | London, UK
+        </div>
+    </div>
+</body>
+</html>
