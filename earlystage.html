@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelle Hajjar - Growth & Commercial Leader</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0A1628;
+            --accent: #3B82F6;
+            --accent-light: #60A5FA;
+            --white: #FFFFFF;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-400: #9CA3AF;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--gray-100);
+            color: var(--gray-800);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, #142240 60%, #1E3A5F 100%);
+            color: var(--white);
+            padding: 48px 52px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-left h1 {
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 4px;
+        }
+
+        .header-left .title {
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--accent-light);
+            margin-bottom: 8px;
+        }
+
+        .header-left .tagline {
+            font-size: 13.5px;
+            color: rgba(255,255,255,0.7);
+            max-width: 480px;
+            line-height: 1.5;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 12.5px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+        }
+
+        .header-right a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .lang-bar {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lang-tag {
+            background: rgba(59,130,246,0.2);
+            border: 1px solid rgba(59,130,246,0.3);
+            color: var(--accent-light);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .content { padding: 40px 52px; }
+
+        .section { margin-bottom: 32px; }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .summary-text {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.7;
+            max-width: 780px;
+        }
+
+        .role {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .role:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .role-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .role-company {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .role-meta {
+            font-size: 11.5px;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        .role-date {
+            font-size: 12px;
+            color: var(--gray-400);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .role-summary {
+            font-size: 13px;
+            color: var(--gray-600);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements li {
+            font-size: 12.5px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            padding: 3px 0 3px 18px;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 5px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .skill-group h4 {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            background: var(--gray-100);
+            color: var(--gray-600);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .edu-text {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .edu-text strong { color: var(--gray-800); }
+
+        .footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 16px;
+            font-size: 11px;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none; max-width: 100%; }
+            .section { page-break-inside: avoid; }
+        }
+
+        @media (max-width: 700px) {
+            .header { padding: 28px 20px; }
+            .header-top { flex-direction: column; }
+            .header-right { text-align: left; margin-top: 12px; }
+            .content { padding: 28px 20px; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-top">
+                <div class="header-left">
+                    <h1>MICHELLE HAJJAR</h1>
+                    <div class="title">Growth & Commercial Leader | From Zero-to-One to Scale</div>
+                    <p class="tagline">I've built growth engines at every stage - from launching e-commerce from scratch, to running funnels for mid-size companies, to co-founding an NGO across 176 countries, to owning a $264M P&L. I know how to operate scrappy and how to scale.</p>
+                </div>
+                <div class="header-right">
+                    +44 7393 339163<br>
+                    <a href="mailto:michelle.hajjar@gmail.com">michelle.hajjar@gmail.com</a><br>
+                    London, UK<br>
+                    <a href="https://linkedin.com/in/michelle-hajjar">linkedin.com/in/michelle-hajjar</a>
+                </div>
+            </div>
+            <div class="lang-bar">
+                <span class="lang-tag">English (Native)</span>
+                <span class="lang-tag">French (Native)</span>
+                <span class="lang-tag">Arabic (Native)</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div class="section-title">What I Bring</div>
+                <p class="summary-text">
+                    I've built growth engines at every stage - from launching a luxury e-commerce platform from scratch (Patchi, 22% revenue online in 6 months), to running acquisition funnels for mid-size companies (Subaru, +15% YoY), to co-founding an NGO across 176 countries, to owning a $264M P&L at MoneyGram where I scaled digital from 0% to 50% of all transactions. I know how to operate scrappy with no team and no budget, and I know how to scale with a $39.3M budget and 15 people. I build the function, hire the team, set the metrics, deploy agentic AI and workflow automation (n8n), and drive the numbers - whether that's at a 5-person startup or a Fortune 500.
+                </p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Experience</div>
+
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Head of Growth, Europe</div>
+                            <div class="role-company">MoneyGram International</div>
+                            <div class="role-meta">$264M P&L | 12 markets | 5 direct + 10 matrix | Built marketing, CS, and analytics from zero</div>
+                        </div>
+                        <div class="role-date">Sep 2023 - Nov 2025</div>
+                    </div>
+                    <ul class="achievements">
+                        <li><span class="highlight">Scaled digital from 0% to 50%</span> of all transactions. Revenue $208M to $264M (+27%). Customers 1.27M to 2.13M (+68%).</li>
+                        <li><span class="highlight">Full-funnel ownership:</span> Acquisition to retention. CAC reduced 69% ($92 to $28). LTV:CAC improved from 0.65x to 1.42x.</li>
+                        <li><span class="highlight">Built funnel health monitoring</span> as a product analytics function; cross-functional with product, data science, and engineering.</li>
+                        <li><span class="highlight">30+ partnerships</span> (Visa, Apple Pay, Google Pay, Orange Money) across B2B2C model. +40% YoY corridor growth.</li>
+                        <li><span class="highlight">Built marketing from zero:</span> $39.3M budget, MMM, landing pages, MarTech, Gen AI content. Built CS from scratch with cohort model.</li>
+                        <li><span class="highlight">Pricing architecture:</span> Subscription, tiered, dynamic with AI. +8-10% profitability improvement.</li>
+                        <li><span class="highlight">Agentic AI & Automation:</span> Deployed agentic AI frameworks and n8n workflow automation for content, personalisation, predictive models, and next-best-action orchestration.</li>
+                        <li><span class="highlight">PE acquisition:</span> Led change management through Madison Dearborn's $1.8B deal. Weekly CEO and board presenter.</li>
+                    </ul>
+                </div>
+
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Product Marketing Lead, EMEIA</div>
+                            <div class="role-company">MoneyGram International</div>
+                        </div>
+                        <div class="role-date">Sep 2021 - Aug 2023</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Launched 7 new European markets with data-led corridor scoring model adopted globally.</li>
+                        <li>LTV-based segmentation improving marketing ROI by 25%. Board-level reporting on expansion readiness.</li>
+                    </ul>
+                </div>
+
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Digital Transformation Consultant</div>
+                            <div class="role-company">Subaru | Demco Properties | Patchi Global</div>
+                            <div class="role-meta">Hands-on operator across three very different businesses. No team, no budget, just results.</div>
+                        </div>
+                        <div class="role-date">Jan 2017 - Nov 2020</div>
+                    </div>
+                    <ul class="achievements">
+                        <li><span class="highlight">Subaru Automotive:</span> Built acquisition funnels, segmentation, and brand positioning from scratch. +15% YoY sales growth.</li>
+                        <li><span class="highlight">Demco Properties ($930M portfolio):</span> Content strategy, remarketing, VR/360 tools. +50% qualified leads YoY.</li>
+                        <li><span class="highlight">Patchi Global:</span> Launched MENA's first luxury e-commerce platform end-to-end. 22% of revenue shifted online within 6 months.</li>
+                    </ul>
+                </div>
+
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Cofounder & Growth Executive</div>
+                            <div class="role-company">Jobs for Lebanon NGO</div>
+                        </div>
+                        <div class="role-date">2019 - 2021</div>
+                    </div>
+                    <p class="role-summary">Co-founded from zero. Built digital platforms, partner network, and operations across 176+ countries. True zero-to-one experience.</p>
+                </div>
+
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Product Marketing & Operations Lead, EMEIA Beauty</div>
+                            <div class="role-company">Burberry</div>
+                        </div>
+                        <div class="role-date">2013 - 2016</div>
+                    </div>
+                    <p class="role-summary">Launched Burberry Beauty across 20 countries from standing start. Full P&L. Digital-first commercial model.</p>
+                </div>
+
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">Est&eacute;e Lauder (Clinique & Origins)</div>
+                            <div class="role-company">Digital Trade Marketing, EMEIA Travel Retail</div>
+                        </div>
+                        <div class="role-date">2013</div>
+                    </div>
+                </div>
+
+                <div class="role">
+                    <div class="role-header">
+                        <div>
+                            <div class="role-title">HAVAS Digital, Dubai</div>
+                            <div class="role-company">Senior Digital Professional</div>
+                        </div>
+                        <div class="role-date">2011 - 2013</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Skills & Tools</div>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h4>Growth</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Full-Funnel Ownership</span>
+                            <span class="skill-tag">Acquisition</span>
+                            <span class="skill-tag">Retention</span>
+                            <span class="skill-tag">Pricing</span>
+                            <span class="skill-tag">Unit Economics</span>
+                            <span class="skill-tag">P&L</span>
+                            <span class="skill-tag">Funnel Analytics</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Marketing</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Website & E-commerce</span>
+                            <span class="skill-tag">Demand Gen</span>
+                            <span class="skill-tag">MMM</span>
+                            <span class="skill-tag">Performance Marketing</span>
+                            <span class="skill-tag">Gen AI</span>
+                            <span class="skill-tag">Landing Pages</span>
+                            <span class="skill-tag">Omnichannel</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Partnerships</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Enterprise Sales</span>
+                            <span class="skill-tag">B2B2C</span>
+                            <span class="skill-tag">Value-Based Selling</span>
+                            <span class="skill-tag">Deal Structuring</span>
+                            <span class="skill-tag">Partner Playbooks</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Tech</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agentic AI</span>
+                            <span class="skill-tag">n8n</span>
+                            <span class="skill-tag">Salesforce</span>
+                            <span class="skill-tag">Looker</span>
+                            <span class="skill-tag">AppsFlyer</span>
+                            <span class="skill-tag">Zeta CDP</span>
+                            <span class="skill-tag">Jira</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                <p class="edu-text"><strong>BBA</strong> - Lebanese American University (LAU) &nbsp;|&nbsp; <strong>Pre-Med</strong> - American University of Beirut (AUB) &nbsp;|&nbsp; <strong>Speaker</strong> - FinTech LIVE London</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Michelle Hajjar | Growth & Commercial Leader | +44 7393 339163 | michelle.hajjar@gmail.com | London, UK
+        </div>
+    </div>
+</body>
+</html>
